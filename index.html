@@ -116,11 +116,12 @@
 <span class="ln">2</span><span class="kw">class</span> <span class="cls">Benoy</span>(<span class="cls">Engineer</span>):
 <span class="ln">3</span>    role     = <span class="st">"Software &amp; ML Engineer"</span>
 <span class="ln">4</span>    studying = <span class="st">"MS CS @ Northeastern"</span>
-<span class="ln">5</span>    builds   = [<span class="st">"LLM apps"</span>, <span class="st">"ML pipelines"</span>,
-<span class="ln">6</span>                <span class="st">"full-stack products"</span>]
-<span class="ln">7</span>    open_to  = [<span class="st">"SWE"</span>, <span class="st">"ML"</span>, <span class="st">"AI"</span>]
-<span class="ln">8</span>
-<span class="ln">9</span><span class="pr">&gt;&gt;&gt;</span> <span class="cls">Benoy</span>().pitch()
+<span class="ln">5</span>    builds   = [<span class="st">"idea → prototype"</span>,
+<span class="ln">6</span>                <span class="st">"prototype → production"</span>,
+<span class="ln">7</span>                <span class="st">"data → decisions"</span>]
+<span class="ln">8</span>    open_to  = [<span class="st">"SWE"</span>, <span class="st">"ML"</span>, <span class="st">"AI"</span>]
+<span class="ln">9</span>
+<span class="ln">10</span><span class="pr">&gt;&gt;&gt;</span> <span class="cls">Benoy</span>().pitch()
 <span class="out">"I build systems where data, software and AI meet."</span></code><span class="caret" aria-hidden="true"></span></pre>
         </figure>
       </div>
@@ -253,10 +254,12 @@
           <div class="print-body">
             <p class="print-meta"><span>03</span>Computer Vision · 2026</p>
             <h3>Kitchen Version Control</h3>
-            <p class="print-desc">Git-style history for a shared kitchen counter: phone snapshots become a log of what was added, moved or removed. I built the detector.</p>
+            <p class="print-desc">Version control for the physical world. Phone snapshots of a shared kitchen counter, taken from any angle, become a Git-style log of which objects were added, moved or removed, and when. A fine-tuned YOLO26 detector already spots 96% of cups, plates, glasses and cutlery in held-out photos; object tracking and a Claude assistant that answers “where's the knife?” come next.</p>
             <ul class="print-stats">
-              <li><b>453 / 470</b> objects found</li>
-              <li><b>YOLO26</b> fine-tuned</li>
+              <li><b>96%</b> objects detected</li>
+              <li><b>93%</b> of cutlery found</li>
+              <li><b>449</b> labeled photos</li>
+              <li><b>3</b> kitchens</li>
             </ul>
             <p class="print-stack">PyTorch · Ultralytics · CLIP · SQLite · FastAPI · Next.js</p>
             <p class="print-links">
