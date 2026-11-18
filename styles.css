@@ -350,6 +350,7 @@ a.env-v:hover { color: var(--accent); }
 .print-img { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 3px; background: #f1ece2; }
 .print-img img { width: 100%; height: 100%; object-fit: cover; object-position: left top; transition: transform .5s ease; }
 .print:hover .print-img img { transform: scale(1.04); }
+.print-img img[src*="kitchen"] { object-fit: contain; object-position: center; padding: 3%; background: #f1ece2; }
 .print-body { padding: 8px 12px 8px 0; }
 .print:nth-child(even) .print-body { padding: 8px 0 8px 12px; }
 .print-meta { display: flex; gap: 10px; align-items: baseline; font-size: 12.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
