@@ -26,10 +26,12 @@
       nodes.push({ node: n, text: n.nodeValue, instant: parent.classList && parent.classList.contains('ln'), output: parent.classList && parent.classList.contains('out') });
     }
     var run = 0;
+    var outEl = code.querySelector('.out');
+    function endCaret() { (outEl || pre).appendChild(caret); }
 
     function showAll() {
       nodes.forEach(function (it) { it.node.nodeValue = it.text; });
-      pre.appendChild(caret);
+      endCaret();
     }
     function play() {
       var my = ++run;
@@ -38,7 +40,7 @@
       var i = 0, c = 0;
       function step() {
         if (my !== run) return;
-        if (i >= nodes.length) { pre.appendChild(caret); return; }
+        if (i >= nodes.length) { endCaret(); return; }
         var it = nodes[i];
         // Keep the caret right after the text being typed.
         it.node.parentNode.insertBefore(caret, it.node.nextSibling);

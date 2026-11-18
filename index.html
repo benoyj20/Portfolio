@@ -40,7 +40,7 @@
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="hero-scene" aria-hidden="true">
-        <svg viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice">
+        <svg viewBox="0 0 1440 270" preserveAspectRatio="xMaxYMax slice">
           <defs>
             <radialGradient id="sun" cx="50%" cy="50%" r="50%">
               <stop offset="0" stop-color="#fff4e2"/>
@@ -51,47 +51,50 @@
               <stop offset="1" stop-color="#b9c5d3"/>
             </linearGradient>
           </defs>
-          <!-- Sun setting behind the skyline -->
-          <circle cx="1262" cy="300" r="74" fill="url(#sun)"/>
-          <!-- Boston skyline: back row -->
-          <g fill="#e2cbbd">
-            <rect x="760" y="282" width="46" height="58"/>
-            <rect x="812" y="250" width="38" height="90"/>
-            <rect x="858" y="296" width="54" height="44"/>
-            <rect x="1170" y="262" width="44" height="78"/>
-            <rect x="1220" y="296" width="70" height="44"/>
-            <rect x="1300" y="276" width="40" height="64"/>
-            <rect x="1348" y="304" width="92" height="36"/>
-          </g>
-          <!-- Front row: Prudential (with mast) and the slim Hancock tower -->
-          <g fill="#d6b8a8">
-            <rect x="918" y="300" width="64" height="40"/>
-            <rect x="988" y="196" width="58" height="144"/>
-            <rect x="1012" y="160" width="10" height="36"/>
-            <rect x="1016" y="128" width="2" height="32"/>
-            <polygon points="1060,148 1104,140 1104,340 1060,340"/>
-            <rect x="1112" y="276" width="52" height="64"/>
-            <rect x="700" y="306" width="54" height="34"/>
+          <!-- Skyline drawn at 70% scale, anchored to the right edge, horizon at y=170 -->
+          <g transform="translate(432 -68) scale(.7)">
+            <circle cx="1262" cy="300" r="74" fill="url(#sun)"/>
+            <g fill="#e2cbbd">
+              <rect x="760" y="282" width="46" height="58"/>
+              <rect x="812" y="250" width="38" height="90"/>
+              <rect x="858" y="296" width="54" height="44"/>
+              <rect x="1170" y="262" width="44" height="78"/>
+              <rect x="1220" y="296" width="70" height="44"/>
+              <rect x="1300" y="276" width="40" height="64"/>
+              <rect x="1348" y="304" width="92" height="36"/>
+            </g>
+            <!-- Prudential (with mast) and the slim Hancock tower -->
+            <g fill="#d6b8a8">
+              <rect x="918" y="300" width="64" height="40"/>
+              <rect x="988" y="196" width="58" height="144"/>
+              <rect x="1012" y="160" width="10" height="36"/>
+              <rect x="1016" y="128" width="2" height="32"/>
+              <polygon points="1060,148 1104,140 1104,340 1060,340"/>
+              <rect x="1112" y="276" width="52" height="64"/>
+              <rect x="700" y="306" width="54" height="34"/>
+            </g>
           </g>
           <!-- Charles River -->
-          <rect x="0" y="340" width="1440" height="180" fill="url(#river)"/>
+          <rect x="0" y="170" width="1440" height="100" fill="url(#river)"/>
           <g fill="none" stroke="#ffffff" stroke-opacity=".55" stroke-width="1.5">
-            <path d="M0 372 C 240 360, 480 386, 720 372 S 1200 360, 1440 374"/>
-            <path d="M0 412 C 260 400, 520 428, 780 412 S 1220 398, 1440 414"/>
-            <path d="M0 458 C 280 446, 560 474, 840 458 S 1240 444, 1440 460"/>
+            <path d="M0 188 C 240 182, 480 196, 720 188 S 1200 182, 1440 190"/>
+            <path d="M0 214 C 260 207, 520 222, 780 214 S 1220 206, 1440 216"/>
+            <path d="M0 244 C 280 237, 560 252, 840 244 S 1240 236, 1440 246"/>
           </g>
           <!-- Sun reflection -->
-          <g stroke="#fbe3cc" stroke-width="3" stroke-linecap="round" opacity=".9">
-            <line x1="1235" y1="356" x2="1289" y2="356"/>
-            <line x1="1245" y1="372" x2="1281" y2="372"/>
-            <line x1="1227" y1="390" x2="1297" y2="390"/>
-            <line x1="1251" y1="410" x2="1273" y2="410"/>
+          <g stroke="#fbe3cc" stroke-width="2.5" stroke-linecap="round" opacity=".9">
+            <line x1="1297" y1="181" x2="1335" y2="181"/>
+            <line x1="1304" y1="192" x2="1329" y2="192"/>
+            <line x1="1291" y1="205" x2="1340" y2="205"/>
+            <line x1="1308" y1="219" x2="1324" y2="219"/>
           </g>
           <!-- A sailboat on the river -->
-          <g class="boat">
-            <path d="M560 392 L604 392 L596 402 L568 402 Z" fill="#8a7b72"/>
-            <path d="M582 390 L582 344 L604 388 Z" fill="#fbf8f2"/>
-            <path d="M578 390 L578 352 L562 388 Z" fill="#efe4d6"/>
+          <g transform="translate(28 -76) scale(.7)">
+            <g class="boat">
+              <path d="M560 392 L604 392 L596 402 L568 402 Z" fill="#8a7b72"/>
+              <path d="M582 390 L582 344 L604 388 Z" fill="#fbf8f2"/>
+              <path d="M578 390 L578 352 L562 388 Z" fill="#efe4d6"/>
+            </g>
           </g>
         </svg>
       </div>
@@ -112,17 +115,15 @@
             <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>about_me.py
             <button class="run-btn" type="button" id="run-code" aria-label="Replay the code animation">▶ run</button>
           </figcaption>
-          <pre><code id="code-src"><span class="ln">1</span><span class="cm"># the short version</span>
-<span class="ln">2</span><span class="kw">class</span> <span class="cls">Benoy</span>(<span class="cls">Engineer</span>):
-<span class="ln">3</span>    role     = <span class="st">"Software &amp; ML Engineer"</span>
-<span class="ln">4</span>    studying = <span class="st">"MS CS @ Northeastern"</span>
-<span class="ln">5</span>    builds   = [<span class="st">"idea → prototype"</span>,
-<span class="ln">6</span>                <span class="st">"prototype → production"</span>,
-<span class="ln">7</span>                <span class="st">"data → decisions"</span>]
-<span class="ln">8</span>    open_to  = [<span class="st">"SWE"</span>, <span class="st">"ML"</span>, <span class="st">"AI"</span>]
-<span class="ln">9</span>
-<span class="ln">10</span><span class="pr">&gt;&gt;&gt;</span> <span class="cls">Benoy</span>().pitch()
-<span class="out">"I build systems where data, software and AI meet."</span></code><span class="caret" aria-hidden="true"></span></pre>
+          <pre><code id="code-src"><span class="ln">1</span><span class="kw">class</span> <span class="cls">Benoy</span>(<span class="cls">Engineer</span>):
+<span class="ln">2</span>    role     = <span class="st">"Software &amp; ML Engineer"</span>
+<span class="ln">3</span>    studying = <span class="st">"MS CS @ Northeastern"</span>
+<span class="ln">4</span>    builds   = [<span class="st">"idea → prototype"</span>,
+<span class="ln">5</span>                <span class="st">"prototype → production"</span>,
+<span class="ln">6</span>                <span class="st">"data → decisions"</span>]
+<span class="ln">7</span>    open_to  = [<span class="st">"SWE"</span>, <span class="st">"ML"</span>, <span class="st">"AI"</span>]
+<span class="ln">8</span><span class="pr">&gt;&gt;&gt;</span> <span class="cls">Benoy</span>().pitch()
+<span class="out">"I build systems where data, software and AI meet."<span class="caret" aria-hidden="true"></span></span></code></pre>
         </figure>
       </div>
     </section>
