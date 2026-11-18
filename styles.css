@@ -134,7 +134,8 @@ em { font-style: italic; }
   padding: 4px 12px; border-radius: 999px; line-height: 1.5;
 }
 .project-body > p:not(.project-meta):not(.award):not(.stack):not(.links) { margin-top: 12px; font-size: 15.5px; line-height: 1.65; }
-.stats { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+.stats { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 16px 24px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+.stats:has(> div:nth-child(4)) { grid-auto-flow: row; grid-template-columns: 1fr 1fr; }
 .stats dt { font-family: var(--serif); font-size: 26px; line-height: 1.05; color: var(--text); }
 .stats dd { font-size: 13px; color: var(--muted); margin-top: 4px; }
 .stack { margin-top: 12px; font-size: 14px; color: var(--muted); }
