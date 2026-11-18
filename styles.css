@@ -221,9 +221,16 @@ em { font-style: italic; }
 /* Experience told as a story */
 .role { padding: 28px 0 32px; border-top: 1px solid var(--border); }
 .role:first-child { padding-top: 0; border-top: 0; }
-.role-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.role-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 .role-head h3 { font-family: var(--serif); font-size: 30px; line-height: 1.1; }
 .role-head .when { padding-top: 0; white-space: nowrap; }
+.co-logo {
+  flex: 0 0 auto; width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center;
+  background: #fffdf8; border: 1px solid var(--border); box-shadow: 0 1px 2px rgba(28, 25, 23, .06);
+  align-self: center;
+}
+.co-logo img { width: 34px; height: 34px; object-fit: contain; }
+.role-title { flex: 1 1 auto; min-width: 0; }
 .role-story { margin-top: 14px; font-size: 17.5px; line-height: 1.75; max-width: 44em; }
 .role-story strong { color: var(--text); font-weight: 600; }
 .role .stack { margin-top: 14px; }
