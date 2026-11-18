@@ -31,4 +31,34 @@
   }
 
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Copy the email address: works for everyone, unlike mailto links that need a desktop mail app.
+  var copyBtn = document.getElementById('copy-email');
+  var status = document.getElementById('copy-status');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var email = copyBtn.getAttribute('data-email');
+      var label = copyBtn.querySelector('span');
+      function done(ok) {
+        label.textContent = ok ? 'Copied!' : 'Copy email';
+        status.textContent = ok ? 'Email copied to your clipboard.' : 'Select the address above to copy it.';
+        setTimeout(function () { label.textContent = 'Copy email'; status.textContent = ''; }, 2500);
+      }
+      function fallback() {
+        // Older browsers or non-secure pages: copy through a temporary text field.
+        var t = document.createElement('textarea');
+        t.value = email; t.setAttribute('readonly', ''); t.style.position = 'absolute'; t.style.left = '-9999px';
+        document.body.appendChild(t); t.select();
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(t);
+        done(ok);
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(function () { done(true); }, fallback);
+      } else {
+        fallback();
+      }
+    });
+  }
 })();

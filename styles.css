@@ -227,7 +227,11 @@ em { font-style: italic; }
   border-bottom: 1px solid var(--text); line-height: 1.2;
   transition: color .2s ease, border-color .2s ease;
 }
-.email:hover { color: var(--accent); border-color: var(--accent); }
+.email { user-select: all; cursor: text; }
+.contact-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.contact-actions .btn { cursor: pointer; font-family: inherit; }
+.contact-actions svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.copy-status { min-height: 1.5em; margin-top: 12px; font-size: 14px; color: var(--green); font-weight: 500; }
 .socials { display: flex; justify-content: center; gap: 28px; margin-top: 24px; }
 .socials a { font-size: 15px; font-weight: 600; color: var(--body); }
 .socials a:hover { color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
