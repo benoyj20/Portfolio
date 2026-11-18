@@ -4,10 +4,10 @@ Personal portfolio site for Benoy Joseph. Live at **https://benoy-joseph.vercel.
 
 ## Files
 
-- `index.html`: all page content (experience, projects, skills, education, contact)
-- `styles.css`: styles, with light and dark themes defined as CSS variables at the top
-- `main.js`: theme toggle, mobile menu, scroll reveal, active nav link
-- `assets/`: résumé PDF and project screenshots
+- `index.html`: all page content (experience, education, selected work, tools, achievements, contact)
+- `styles.css`: styles; the beige palette and fonts are CSS variables at the top
+- `main.js`: sticky-nav border, scroll reveal, active nav link
+- `assets/`: résumé PDF, project screenshots and certificate images
 - `vercel.json`: clean URLs and cache headers
 
 ## Run locally
