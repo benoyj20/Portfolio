@@ -108,14 +108,20 @@
         </div>
 
         <figure class="code-card" aria-label="About me, written as a Python class">
-          <figcaption><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>about_me.py</figcaption>
-          <pre><code><span class="ln">1</span><span class="cm"># the short version</span>
+          <figcaption>
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>about_me.py
+            <button class="run-btn" type="button" id="run-code" aria-label="Replay the code animation">▶ run</button>
+          </figcaption>
+          <pre><code id="code-src"><span class="ln">1</span><span class="cm"># the short version</span>
 <span class="ln">2</span><span class="kw">class</span> <span class="cls">Benoy</span>(<span class="cls">Engineer</span>):
 <span class="ln">3</span>    role     = <span class="st">"Software &amp; ML Engineer"</span>
 <span class="ln">4</span>    studying = <span class="st">"MS CS @ Northeastern"</span>
 <span class="ln">5</span>    builds   = [<span class="st">"LLM apps"</span>, <span class="st">"ML pipelines"</span>,
 <span class="ln">6</span>                <span class="st">"full-stack products"</span>]
-<span class="ln">7</span>    open_to  = [<span class="st">"SWE"</span>, <span class="st">"ML"</span>, <span class="st">"AI"</span>]<span class="caret" aria-hidden="true"></span></code></pre>
+<span class="ln">7</span>    open_to  = [<span class="st">"SWE"</span>, <span class="st">"ML"</span>, <span class="st">"AI"</span>]
+<span class="ln">8</span>
+<span class="ln">9</span><span class="pr">&gt;&gt;&gt;</span> <span class="cls">Benoy</span>().pitch()
+<span class="out">"I build systems where data, software and AI meet."</span></code><span class="caret" aria-hidden="true"></span></pre>
         </figure>
       </div>
     </section>
@@ -192,141 +198,103 @@
         <span class="count">03</span>
       </div>
 
-      <article class="project">
-        <a class="project-media" href="https://github.com/benoyj20/SecondOpinion" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-          <img class="shot" src="assets/secondopinion.webp" width="960" height="505" loading="lazy" alt="">
-        </a>
-        <div class="project-body">
-          <p class="project-meta"><span>01</span>Healthcare AI · 2026</p>
-          <h3>SecondOpinion</h3>
-          <p class="award">1st place · Evidence Navigator track · AI Healthcare Hackathon at Northeastern</p>
-          <p>A full-stack AI fact-checker for cancer research reports. A stateless FastAPI backend recomputes every statistic in a report from the raw patient data, and a Next.js app turns the audit into a guided 5-step sign-off with role-based views for program leaders, reviewers, researchers and data engineers. An LLM only interprets the language, behind validation guardrails; deterministic code computes every number.</p>
-          <dl class="stats">
-            <div><dt>100%</dt><dd>accuracy on 214 benchmark claims</dd></div>
-            <div><dt>~4 s</dt><dd>to audit a full report</dd></div>
-            <div><dt>0</dt><dd>AI hallucinations reaching users</dd></div>
-            <div><dt>4</dt><dd>role-based review views</dd></div>
-          </dl>
-          <p class="stack">Python · FastAPI · pandas · Next.js · TypeScript · LLM guardrails</p>
-          <p class="links">
-            <a href="https://github.com/benoyj20/SecondOpinion" target="_blank" rel="noopener">View code <span aria-hidden="true">→</span></a>
-            <a href="https://youtu.be/h67XkGvg4mk" target="_blank" rel="noopener">Watch demo <span aria-hidden="true">→</span></a>
-          </p>
-        </div>
-      </article>
+      <div class="light-table">
+        <article class="print tilt-l">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="rosette" aria-label="First place"><b>1st</b>place</span>
+          <a class="print-img" href="https://github.com/benoyj20/SecondOpinion" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/secondopinion.webp" width="960" height="505" loading="lazy" alt="">
+          </a>
+          <div class="print-body">
+            <p class="print-meta"><span>01</span>Healthcare AI · 2026</p>
+            <h3>SecondOpinion</h3>
+            <p class="print-award">1st place, Evidence Navigator · AI Healthcare Hackathon at Northeastern</p>
+            <p class="print-desc">Fact-checks cancer research reports by recomputing every statistic from the raw patient data. An LLM reads the language; deterministic code does all the math.</p>
+            <ul class="print-stats">
+              <li><b>100%</b> on 214 claims</li>
+              <li><b>~4 s</b> per audit</li>
+              <li><b>0</b> hallucinations</li>
+              <li><b>4</b> role views</li>
+            </ul>
+            <p class="print-stack">Python · FastAPI · pandas · Next.js · TypeScript</p>
+            <p class="print-links">
+              <a href="https://github.com/benoyj20/SecondOpinion" target="_blank" rel="noopener">Code ↗</a>
+              <a href="https://youtu.be/h67XkGvg4mk" target="_blank" rel="noopener">Watch demo ↗</a>
+            </p>
+          </div>
+        </article>
 
-      <article class="project flip">
-        <a class="project-media" href="https://github.com/all3n2601/AgentWatch" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-          <img class="shot" src="assets/agentwatch.webp" width="1600" height="1000" loading="lazy" alt="">
-        </a>
-        <div class="project-body">
-          <p class="project-meta"><span>02</span>MLOps · 2026</p>
-          <h3>AgentWatch</h3>
-          <p>Why is my AI coding agent slow? AgentWatch joins every agent step's trace with CPU, GPU and retrieval telemetry on GKE and names the real bottleneck, since each one needs a different fix.</p>
-          <dl class="stats">
-            <div><dt>+10 pts</dt><dd>macro F1 over rule baseline</dd></div>
-            <div><dt>&gt;95%</dt><dd>clean-run specificity</dd></div>
-            <div><dt>~15 s</dt><dd>to attribution</dd></div>
-          </dl>
-          <p class="stack">LightGBM · OpenTelemetry · Prometheus · Airflow · MLflow · GKE</p>
-          <p class="links">
-            <a href="https://github.com/all3n2601/AgentWatch" target="_blank" rel="noopener">View code <span aria-hidden="true">→</span></a>
-          </p>
-        </div>
-      </article>
+        <article class="print tilt-r">
+          <span class="tape" aria-hidden="true"></span>
+          <a class="print-img" href="https://github.com/all3n2601/AgentWatch" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/agentwatch.webp" width="1600" height="1000" loading="lazy" alt="">
+          </a>
+          <div class="print-body">
+            <p class="print-meta"><span>02</span>MLOps · 2026</p>
+            <h3>AgentWatch</h3>
+            <p class="print-desc">Finds why an AI coding agent is slow: joins every step's trace with CPU, GPU and retrieval telemetry on GKE and names the real bottleneck.</p>
+            <ul class="print-stats">
+              <li><b>+10 pts</b> macro F1 vs rules</li>
+              <li><b>&gt;95%</b> specificity</li>
+              <li><b>~15 s</b> to attribution</li>
+            </ul>
+            <p class="print-stack">LightGBM · OpenTelemetry · Prometheus · Airflow · MLflow · GKE</p>
+            <p class="print-links">
+              <a href="https://github.com/all3n2601/AgentWatch" target="_blank" rel="noopener">Code ↗</a>
+            </p>
+          </div>
+        </article>
 
-      <article class="project">
-        <a class="project-media" href="https://github.com/benoyj20/Object-History-Tracking-With-Computer-Vision" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-          <img class="shot" src="assets/kitchen.svg" width="1000" height="540" loading="lazy" alt="">
-        </a>
-        <div class="project-body">
-          <p class="project-meta"><span>03</span>Computer Vision · 2026</p>
-          <h3>Kitchen Version Control</h3>
-          <p>Git-style history for a shared kitchen counter. Phone snapshots from any angle become a log of what was added, moved or removed, and when, so an assistant can answer “where's the knife?”. I built the detector.</p>
-          <dl class="stats">
-            <div><dt>453 / 470</dt><dd>objects found in held-out photos</dd></div>
-            <div><dt>YOLO26</dt><dd>fine-tuned detector</dd></div>
-          </dl>
-          <p class="stack">PyTorch · Ultralytics · CLIP · SQLite · FastAPI · Next.js</p>
-          <p class="links">
-            <a href="https://github.com/benoyj20/Object-History-Tracking-With-Computer-Vision" target="_blank" rel="noopener">View code <span aria-hidden="true">→</span></a>
-          </p>
-        </div>
-      </article>
-
+        <article class="print tilt-l2">
+          <span class="tape" aria-hidden="true"></span>
+          <a class="print-img" href="https://github.com/benoyj20/Object-History-Tracking-With-Computer-Vision" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/kitchen.svg" width="1000" height="540" loading="lazy" alt="">
+          </a>
+          <div class="print-body">
+            <p class="print-meta"><span>03</span>Computer Vision · 2026</p>
+            <h3>Kitchen Version Control</h3>
+            <p class="print-desc">Git-style history for a shared kitchen counter: phone snapshots become a log of what was added, moved or removed. I built the detector.</p>
+            <ul class="print-stats">
+              <li><b>453 / 470</b> objects found</li>
+              <li><b>YOLO26</b> fine-tuned</li>
+            </ul>
+            <p class="print-stack">PyTorch · Ultralytics · CLIP · SQLite · FastAPI · Next.js</p>
+            <p class="print-links">
+              <a href="https://github.com/benoyj20/Object-History-Tracking-With-Computer-Vision" target="_blank" rel="noopener">Code ↗</a>
+            </p>
+          </div>
+        </article>
+      </div>
 
       <p class="more"><a href="https://github.com/benoyj20?tab=repositories" target="_blank" rel="noopener">More projects on GitHub <span aria-hidden="true">↗</span></a></p>
     </section>
 
     <!-- ============ TOOLS ============ -->
-    <section class="split wrap" id="tools">
-      <h2><span class="sec-num">04</span>Tools</h2>
-      <div class="split-body tool-groups">
-          <div class="tool-group">
-            <h3>Languages</h3>
-            <ul class="tiles">
-              <li><img src="assets/icons/python.svg" width="36" height="36" alt="" loading="lazy"><span>Python</span></li>
-              <li><img src="assets/icons/java.svg" width="36" height="36" alt="" loading="lazy"><span>Java</span></li>
-              <li><img src="assets/icons/typescript.svg" width="36" height="36" alt="" loading="lazy"><span>TypeScript</span></li>
-              <li><img src="assets/icons/javascript.svg" width="36" height="36" alt="" loading="lazy"><span>JavaScript</span></li>
-              <li><img src="assets/icons/go.svg" width="36" height="36" alt="" loading="lazy"><span>Go</span></li>
-              <li><img src="assets/icons/c.svg" width="36" height="36" alt="" loading="lazy"><span>C</span></li>
-              <li><img src="assets/icons/cplusplus.svg" width="36" height="36" alt="" loading="lazy"><span>C++</span></li>
-              <li><img src="assets/icons/r.svg" width="36" height="36" alt="" loading="lazy"><span>R</span></li>
-              <li><img src="assets/icons/bash.svg" width="36" height="36" alt="" loading="lazy"><span>Bash</span></li>
-              <li><img src="assets/icons/html5.svg" width="36" height="36" alt="" loading="lazy"><span>HTML</span></li>
-              <li><img src="assets/icons/css3.svg" width="36" height="36" alt="" loading="lazy"><span>CSS</span></li>
-            </ul>
-          </div>
-          <div class="tool-group">
-            <h3>AI &amp; ML</h3>
-            <ul class="tiles">
-              <li><img src="assets/icons/pytorch.svg" width="36" height="36" alt="" loading="lazy"><span>PyTorch</span></li>
-              <li><img src="assets/icons/tensorflow.svg" width="36" height="36" alt="" loading="lazy"><span>TensorFlow</span></li>
-              <li><img src="assets/icons/scikitlearn.svg" width="36" height="36" alt="" loading="lazy"><span>scikit-learn</span></li>
-              <li><img src="assets/icons/apacheairflow.svg" width="36" height="36" alt="" loading="lazy"><span>Apache Airflow</span></li>
-              <li><b class="mono-tile" aria-hidden="true">ML</b><span>MLflow</span></li>
-            </ul>
-          </div>
-          <div class="tool-group">
-            <h3>Web &amp; APIs</h3>
-            <ul class="tiles">
-              <li><img src="assets/icons/react.svg" width="36" height="36" alt="" loading="lazy"><span>React</span></li>
-              <li><img src="assets/icons/nextjs.svg" width="36" height="36" alt="" loading="lazy"><span>Next.js</span></li>
-              <li><img src="assets/icons/nodejs.svg" width="36" height="36" alt="" loading="lazy"><span>Node.js</span></li>
-              <li><img src="assets/icons/express.svg" width="36" height="36" alt="" loading="lazy"><span>Express</span></li>
-              <li><img src="assets/icons/fastapi.svg" width="36" height="36" alt="" loading="lazy"><span>FastAPI</span></li>
-              <li><img src="assets/icons/tailwindcss.svg" width="36" height="36" alt="" loading="lazy"><span>Tailwind CSS</span></li>
-              <li><img src="assets/icons/vitejs.svg" width="36" height="36" alt="" loading="lazy"><span>Vite</span></li>
-              <li><img src="assets/icons/php.svg" width="36" height="36" alt="" loading="lazy"><span>PHP</span></li>
-            </ul>
-          </div>
-          <div class="tool-group">
-            <h3>Databases</h3>
-            <ul class="tiles">
-              <li><img src="assets/icons/postgresql.svg" width="36" height="36" alt="" loading="lazy"><span>PostgreSQL</span></li>
-              <li><img src="assets/icons/mysql.svg" width="36" height="36" alt="" loading="lazy"><span>MySQL</span></li>
-              <li><img src="assets/icons/mongodb.svg" width="36" height="36" alt="" loading="lazy"><span>MongoDB</span></li>
-              <li><img src="assets/icons/sqlite.svg" width="36" height="36" alt="" loading="lazy"><span>SQLite</span></li>
-            </ul>
-          </div>
-          <div class="tool-group">
-            <h3>Cloud &amp; DevOps</h3>
-            <ul class="tiles">
-              <li><img src="assets/icons/amazonwebservices.svg" width="36" height="36" alt="" loading="lazy"><span>AWS</span></li>
-              <li><img src="assets/icons/azure.svg" width="36" height="36" alt="" loading="lazy"><span>Azure</span></li>
-              <li><img src="assets/icons/googlecloud.svg" width="36" height="36" alt="" loading="lazy"><span>Google Cloud</span></li>
-              <li><img src="assets/icons/cloudflare.svg" width="36" height="36" alt="" loading="lazy"><span>Cloudflare</span></li>
-              <li><img src="assets/icons/terraform.svg" width="36" height="36" alt="" loading="lazy"><span>Terraform</span></li>
-              <li><img src="assets/icons/docker.svg" width="36" height="36" alt="" loading="lazy"><span>Docker</span></li>
-              <li><img src="assets/icons/kubernetes.svg" width="36" height="36" alt="" loading="lazy"><span>Kubernetes</span></li>
-              <li><img src="assets/icons/githubactions.svg" width="36" height="36" alt="" loading="lazy"><span>GitHub Actions</span></li>
-              <li><img src="assets/icons/prometheus.svg" width="36" height="36" alt="" loading="lazy"><span>Prometheus</span></li>
-              <li><img src="assets/icons/linux.svg" width="36" height="36" alt="" loading="lazy"><span>Linux</span></li>
-              <li><img src="assets/icons/git.svg" width="36" height="36" alt="" loading="lazy"><span>Git</span></li>
-              <li><img src="assets/icons/github.svg" width="36" height="36" alt="" loading="lazy"><span>GitHub</span></li>
-            </ul>
-          </div>
+    <section class="tools-sec wrap" id="tools">
+      <div class="section-head">
+        <h2><span class="sec-num">04</span>Tools</h2>
+      </div>
+      <div class="tool-rows">
+        <div class="tool-row">
+          <h3>Languages</h3>
+          <ul class="chips"><li><img src="assets/icons/python.svg" width="18" height="18" alt="" loading="lazy">Python</li><li><img src="assets/icons/java.svg" width="18" height="18" alt="" loading="lazy">Java</li><li><img src="assets/icons/typescript.svg" width="18" height="18" alt="" loading="lazy">TypeScript</li><li><img src="assets/icons/javascript.svg" width="18" height="18" alt="" loading="lazy">JavaScript</li><li><img src="assets/icons/go.svg" width="18" height="18" alt="" loading="lazy">Go</li><li><img src="assets/icons/c.svg" width="18" height="18" alt="" loading="lazy">C</li><li><img src="assets/icons/cplusplus.svg" width="18" height="18" alt="" loading="lazy">C++</li><li><img src="assets/icons/r.svg" width="18" height="18" alt="" loading="lazy">R</li><li><img src="assets/icons/bash.svg" width="18" height="18" alt="" loading="lazy">Bash</li><li><img src="assets/icons/html5.svg" width="18" height="18" alt="" loading="lazy">HTML</li><li><img src="assets/icons/css3.svg" width="18" height="18" alt="" loading="lazy">CSS</li></ul>
+        </div>
+        <div class="tool-row">
+          <h3>AI &amp; ML</h3>
+          <ul class="chips"><li><img src="assets/icons/pytorch.svg" width="18" height="18" alt="" loading="lazy">PyTorch</li><li><img src="assets/icons/tensorflow.svg" width="18" height="18" alt="" loading="lazy">TensorFlow</li><li><img src="assets/icons/scikitlearn.svg" width="18" height="18" alt="" loading="lazy">scikit-learn</li><li><img src="assets/icons/apacheairflow.svg" width="18" height="18" alt="" loading="lazy">Apache Airflow</li><li><b class="mono-chip" aria-hidden="true">ML</b>MLflow</li></ul>
+        </div>
+        <div class="tool-row">
+          <h3>Web &amp; APIs</h3>
+          <ul class="chips"><li><img src="assets/icons/react.svg" width="18" height="18" alt="" loading="lazy">React</li><li><img src="assets/icons/nextjs.svg" width="18" height="18" alt="" loading="lazy">Next.js</li><li><img src="assets/icons/nodejs.svg" width="18" height="18" alt="" loading="lazy">Node.js</li><li><img src="assets/icons/express.svg" width="18" height="18" alt="" loading="lazy">Express</li><li><img src="assets/icons/fastapi.svg" width="18" height="18" alt="" loading="lazy">FastAPI</li><li><img src="assets/icons/tailwindcss.svg" width="18" height="18" alt="" loading="lazy">Tailwind CSS</li><li><img src="assets/icons/vitejs.svg" width="18" height="18" alt="" loading="lazy">Vite</li><li><img src="assets/icons/php.svg" width="18" height="18" alt="" loading="lazy">PHP</li></ul>
+        </div>
+        <div class="tool-row">
+          <h3>Databases</h3>
+          <ul class="chips"><li><img src="assets/icons/postgresql.svg" width="18" height="18" alt="" loading="lazy">PostgreSQL</li><li><img src="assets/icons/mysql.svg" width="18" height="18" alt="" loading="lazy">MySQL</li><li><img src="assets/icons/mongodb.svg" width="18" height="18" alt="" loading="lazy">MongoDB</li><li><img src="assets/icons/sqlite.svg" width="18" height="18" alt="" loading="lazy">SQLite</li></ul>
+        </div>
+        <div class="tool-row">
+          <h3>Cloud &amp; DevOps</h3>
+          <ul class="chips"><li><img src="assets/icons/amazonwebservices.svg" width="18" height="18" alt="" loading="lazy">AWS</li><li><img src="assets/icons/azure.svg" width="18" height="18" alt="" loading="lazy">Azure</li><li><img src="assets/icons/googlecloud.svg" width="18" height="18" alt="" loading="lazy">Google Cloud</li><li><img src="assets/icons/cloudflare.svg" width="18" height="18" alt="" loading="lazy">Cloudflare</li><li><img src="assets/icons/terraform.svg" width="18" height="18" alt="" loading="lazy">Terraform</li><li><img src="assets/icons/docker.svg" width="18" height="18" alt="" loading="lazy">Docker</li><li><img src="assets/icons/kubernetes.svg" width="18" height="18" alt="" loading="lazy">Kubernetes</li><li><img src="assets/icons/githubactions.svg" width="18" height="18" alt="" loading="lazy">GitHub Actions</li><li><img src="assets/icons/prometheus.svg" width="18" height="18" alt="" loading="lazy">Prometheus</li><li><img src="assets/icons/linux.svg" width="18" height="18" alt="" loading="lazy">Linux</li><li><img src="assets/icons/git.svg" width="18" height="18" alt="" loading="lazy">Git</li><li><img src="assets/icons/github.svg" width="18" height="18" alt="" loading="lazy">GitHub</li></ul>
+        </div>
       </div>
     </section>
 

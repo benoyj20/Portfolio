@@ -8,7 +8,72 @@
   onScroll();
 
   // Fade sections in as they scroll into view.
-  var revealTargets = document.querySelectorAll('.project, .split, .achieve, .contact, .facts');
+  var revealTargets = document.querySelectorAll('.light-table, .split, .tools-sec, .achieve, .contact, .facts');
+
+  // Type out the about_me.py card, then "run" it. Replays from the ▶ run button.
+  (function typeCode() {
+    var code = document.getElementById('code-src');
+    if (!code) return;
+    var pre = code.parentNode;
+    var caret = pre.querySelector('.caret');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Every text node, with its full text and whether it should appear instantly (line numbers).
+    var nodes = [];
+    var walker = document.createTreeWalker(code, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) {
+      var n = walker.currentNode;
+      var parent = n.parentNode;
+      nodes.push({ node: n, text: n.nodeValue, instant: parent.classList && parent.classList.contains('ln'), output: parent.classList && parent.classList.contains('out') });
+    }
+    var run = 0;
+
+    function showAll() {
+      nodes.forEach(function (it) { it.node.nodeValue = it.text; });
+      pre.appendChild(caret);
+    }
+    function play() {
+      var my = ++run;
+      pre.style.minHeight = pre.offsetHeight + 'px';
+      nodes.forEach(function (it) { it.node.nodeValue = ''; });
+      var i = 0, c = 0;
+      function step() {
+        if (my !== run) return;
+        if (i >= nodes.length) { pre.appendChild(caret); return; }
+        var it = nodes[i];
+        // Keep the caret right after the text being typed.
+        it.node.parentNode.insertBefore(caret, it.node.nextSibling);
+        if (it.instant) { it.node.nodeValue = it.text; i++; return setTimeout(step, 20); }
+        if (it.output) { it.node.nodeValue = it.text; i++; return setTimeout(step, 0); }
+        if (c < it.text.length) {
+          var ch = it.text.charAt(c);
+          // Indentation and spacing type in one go; newlines and the >>> prompt get a pause.
+          if (ch === ' ') { while (c < it.text.length && it.text.charAt(c) === ' ') c++; }
+          else c++;
+          it.node.nodeValue = it.text.slice(0, c);
+          var delay = ch === '\n' ? 150 : 11 + Math.random() * 16;
+          if (it.text === '>>>' && c === it.text.length) delay = 450;
+          return setTimeout(step, delay);
+        }
+        // Pause before printing the output line, like a REPL running the call.
+        var next = nodes[i + 1];
+        i++; c = 0;
+        setTimeout(step, next && next.output ? 550 : 0);
+      }
+      step();
+    }
+
+    if (reduce) { showAll(); }
+    else {
+      var started = false;
+      var start = function () { if (!started) { started = true; setTimeout(play, 350); } };
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { start(); io.disconnect(); } }, { threshold: 0.3 });
+        io.observe(pre);
+      } else { start(); }
+    }
+    var btn = document.getElementById('run-code');
+    if (btn) btn.addEventListener('click', function () { if (reduce) showAll(); else play(); });
+  })();
   if ('IntersectionObserver' in window) {
     revealTargets.forEach(function (el) { el.classList.add('reveal'); });
     var revealer = new IntersectionObserver(function (entries) {
