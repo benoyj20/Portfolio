@@ -46,7 +46,12 @@
         // Keep the caret right after the text being typed.
         if (c === 0) it.node.parentNode.insertBefore(caret, it.node.nextSibling);
         if (it.instant) { it.node.nodeValue = it.text; i++; return setTimeout(step, 0); }
-        if (it.output) { it.node.nodeValue = it.text; i++; return setTimeout(step, 0); }
+        if (it.output && c < it.text.length) {
+          // The printed answer types out at a slightly slower, even pace so it can be read.
+          c++;
+          it.node.nodeValue = it.text.slice(0, c);
+          return setTimeout(step, 55);
+        }
         if (c < it.text.length) {
           var ch = it.text.charAt(c);
           // Steady rhythm, one character at a time. Leading indentation appears at once,
@@ -62,7 +67,7 @@
         // Pause before printing the output line, like a REPL running the call.
         var next = nodes[i + 1];
         i++; c = 0;
-        setTimeout(step, next && next.output ? 550 : 0);
+        setTimeout(step, next && next.output ? 700 : 0);
       }
       step();
     }

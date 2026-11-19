@@ -130,7 +130,8 @@ em { font-style: italic; }
 }
 .facts > div { padding: 18px 24px 0 0; }
 .facts > div + div { padding-left: 24px; border-left: 1px solid var(--border); }
-.facts dt { font-size: 24px; font-weight: 400; line-height: 1.1; letter-spacing: -.01em; color: var(--text); }
+.facts dt { font-size: 32px; font-weight: 700; line-height: 1.05; letter-spacing: -.035em; color: var(--text); font-variant-numeric: tabular-nums; }
+.facts dt::before { content: ""; display: block; width: 26px; height: 3px; margin-bottom: 14px; border-radius: 2px; background: var(--accent); }
 .facts dd { margin-top: 6px; font-size: 15px; color: var(--muted); line-height: 1.5; max-width: 16em; }
 
 /* Numbered section headings */
@@ -436,7 +437,7 @@ a.env-v:hover { color: var(--accent); }
   .light-table { gap: 34px; padding: 30px 14px; }
   .tool-row { grid-template-columns: 1fr; gap: 8px; }
   .rosette { right: -6px; }
-  .facts dt { font-size: 21px; }
+  .facts dt { font-size: 27px; }
   .project-media { padding: 16px; border-radius: 14px; }
   .section-head { margin-bottom: 28px; }
   .more { margin-top: -16px; }
