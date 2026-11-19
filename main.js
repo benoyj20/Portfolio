@@ -37,23 +37,26 @@
       var my = ++run;
       pre.style.minHeight = pre.offsetHeight + 'px';
       nodes.forEach(function (it) { it.node.nodeValue = ''; });
+      pre.classList.add('typing');
       var i = 0, c = 0;
       function step() {
         if (my !== run) return;
-        if (i >= nodes.length) { endCaret(); return; }
+        if (i >= nodes.length) { pre.classList.remove('typing'); endCaret(); return; }
         var it = nodes[i];
         // Keep the caret right after the text being typed.
-        it.node.parentNode.insertBefore(caret, it.node.nextSibling);
-        if (it.instant) { it.node.nodeValue = it.text; i++; return setTimeout(step, 20); }
+        if (c === 0) it.node.parentNode.insertBefore(caret, it.node.nextSibling);
+        if (it.instant) { it.node.nodeValue = it.text; i++; return setTimeout(step, 0); }
         if (it.output) { it.node.nodeValue = it.text; i++; return setTimeout(step, 0); }
         if (c < it.text.length) {
           var ch = it.text.charAt(c);
-          // Indentation and spacing type in one go; newlines and the >>> prompt get a pause.
-          if (ch === ' ') { while (c < it.text.length && it.text.charAt(c) === ' ') c++; }
+          // Steady rhythm, one character at a time. Leading indentation appears at once,
+          // like an editor auto-indenting; line ends and the >>> prompt get a short pause.
+          var lineStart = c === 0 || it.text.charAt(c - 1) === '\n';
+          if (ch === ' ' && lineStart) { while (c < it.text.length && it.text.charAt(c) === ' ') c++; }
           else c++;
           it.node.nodeValue = it.text.slice(0, c);
-          var delay = ch === '\n' ? 150 : 11 + Math.random() * 16;
-          if (it.text === '>>>' && c === it.text.length) delay = 450;
+          var delay = ch === '\n' ? 220 : 38;
+          if (it.text === '>>>' && c === it.text.length) delay = 400;
           return setTimeout(step, delay);
         }
         // Pause before printing the output line, like a REPL running the call.

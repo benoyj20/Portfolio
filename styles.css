@@ -119,6 +119,8 @@ em { font-style: italic; }
 .ln { display: inline-block; width: 1.6em; margin-right: 14px; text-align: right; color: #5f5650; user-select: none; }
 .kw { color: #f0a868; } .cls { color: #8fd6b4; } .st { color: #e9d8a6; } .cm { color: #8a817c; font-style: italic; }
 .caret { display: inline-block; width: 8px; height: 1.05em; margin-left: 4px; vertical-align: -2px; background: #f0a868; animation: blink 1.1s steps(1) infinite; }
+/* Solid caret while typing; it only blinks once the card is idle. */
+.typing .caret { animation: none; }
 @keyframes blink { 50% { opacity: 0; } }
 
 .facts-band { margin-top: -1px; }
@@ -128,7 +130,7 @@ em { font-style: italic; }
 }
 .facts > div { padding: 18px 24px 0 0; }
 .facts > div + div { padding-left: 24px; border-left: 1px solid var(--border); }
-.facts dt { font-family: var(--serif); font-size: 36px; line-height: 1; color: var(--text); }
+.facts dt { font-size: 24px; font-weight: 400; line-height: 1.1; letter-spacing: -.01em; color: var(--text); }
 .facts dd { margin-top: 6px; font-size: 15px; color: var(--muted); line-height: 1.5; max-width: 16em; }
 
 /* Numbered section headings */
@@ -434,7 +436,7 @@ a.env-v:hover { color: var(--accent); }
   .light-table { gap: 34px; padding: 30px 14px; }
   .tool-row { grid-template-columns: 1fr; gap: 8px; }
   .rosette { right: -6px; }
-  .facts dt { font-size: 30px; }
+  .facts dt { font-size: 21px; }
   .project-media { padding: 16px; border-radius: 14px; }
   .section-head { margin-bottom: 28px; }
   .more { margin-top: -16px; }
