@@ -361,10 +361,10 @@ a.env-v:hover { color: var(--accent); }
 .rosette b { display: block; font: 400 30px/1 var(--serif); letter-spacing: 0; text-transform: none; }
 .print-img { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 3px; background: #f1ece2; }
 .print-img img { width: 100%; height: 100%; object-fit: cover; object-position: left top; transition: transform .5s ease; }
-/* Tall screenshot: the frame grows with the text and shows the whole image on the app's own background */
-.print-tall { align-items: stretch; }
-.print-tall .print-img { aspect-ratio: auto; min-height: 320px; background: #050f17; }
-.print-tall .print-img img { object-fit: contain; object-position: center; }
+/* Two stacked screenshots instead of one cropped frame */
+.print-shots { display: grid; gap: 10px; }
+.print-shots img { width: 100%; height: auto; border-radius: 3px; transition: transform .5s ease; }
+.print:hover .print-shots img { transform: scale(1.015); }
 .print:hover .print-img img { transform: scale(1.04); }
 .print-img img[src*="kitchen"] { object-fit: contain; object-position: center; padding: 3%; background: #f1ece2; }
 .print-body { padding: 8px 12px 8px 0; }
@@ -431,8 +431,6 @@ a.env-v:hover { color: var(--accent); }
   .light-table { padding: 40px 24px; gap: 44px; }
   .print, .print:nth-child(even) { grid-template-columns: 1fr; gap: 16px; }
   .print:nth-child(even) .print-img { order: 0; }
-  .print-tall .print-img { aspect-ratio: 16 / 10; min-height: 0; }
-  .print-tall .print-img img { object-fit: cover; object-position: center top; }
   .print-body, .print:nth-child(even) .print-body { padding: 4px 6px 6px; }
 }
 
