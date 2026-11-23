@@ -255,17 +255,17 @@
             <img src="assets/triageai.webp" width="1352" height="842" loading="lazy" alt="">
           </a>
           <div class="print-body">
-            <p class="print-meta"><span>03</span>Applied AI · Retrieval · 2026</p>
+            <p class="print-meta"><span>03</span>Generative AI · RAG · 2026</p>
             <h3>TriageAI</h3>
             <p class="print-award">2nd place · Google Developer Groups (GDG) Cloud Boston x Northeastern University Hackathon</p>
-            <p class="print-desc">Incident triage that explains itself. Every support ticket, in English or German, is classified, gated and matched to resolved precedents; urgent incidents go straight to on-call, and drafted replies may only cite real past tickets. Personal data is masked before any model sees the text.</p>
+            <p class="print-desc">A multilingual <strong>RAG</strong> system for IT support. It triages each ticket in English or German, retrieves the five closest solved cases from a Redis vector index, and has an LLM draft a reply that may only cite them, so nothing is made up. Eleven safety rules escalate urgent incidents to on-call, and personal data is masked before any model sees it.</p>
             <ul class="print-stats">
-              <li><b>0.89</b> type macro F1</li>
-              <li><b>87%</b> urgent-incident recall</li>
-              <li><b>8,034</b> holdout tickets</li>
-              <li><b>7/7</b> leakage checks</li>
+              <li><b>87%</b> of urgent incidents caught</li>
+              <li><b>0.89</b> macro F1 on 8,034 unseen tickets</li>
+              <li><b>11</b> safety rules</li>
+              <li><b>9 ms</b> to classify</li>
             </ul>
-            <p class="print-stack">Python · FastAPI · Go · React · Redis vector search · OpenAI · Gemini</p>
+            <p class="print-stack">Python · FastAPI · Go · React · RAG · Redis vector search · OpenAI · Gemini · Docker</p>
             <p class="print-links">
               <a href="https://github.com/benoyj20/TriageAI" target="_blank" rel="noopener">Code ↗</a>
               <a href="https://youtu.be/neZXzgZFY9s" target="_blank" rel="noopener">Watch demo ↗</a>
@@ -305,7 +305,7 @@
         </div>
         <div class="tool-row">
           <h3>AI &amp; ML</h3>
-          <ul class="chips"><li><img src="assets/icons/pytorch.svg" width="18" height="18" alt="" loading="lazy">PyTorch</li><li><img src="assets/icons/tensorflow.svg" width="18" height="18" alt="" loading="lazy">TensorFlow</li><li><img src="assets/icons/scikitlearn.svg" width="18" height="18" alt="" loading="lazy">scikit-learn</li><li><img src="assets/icons/apacheairflow.svg" width="18" height="18" alt="" loading="lazy">Apache Airflow</li><li><b class="mono-chip" aria-hidden="true">ML</b>MLflow</li></ul>
+          <ul class="chips"><li><img src="assets/icons/pytorch.svg" width="18" height="18" alt="" loading="lazy">PyTorch</li><li><img src="assets/icons/tensorflow.svg" width="18" height="18" alt="" loading="lazy">TensorFlow</li><li><img src="assets/icons/scikitlearn.svg" width="18" height="18" alt="" loading="lazy">scikit-learn</li><li><img src="assets/icons/apacheairflow.svg" width="18" height="18" alt="" loading="lazy">Apache Airflow</li><li><b class="mono-chip" aria-hidden="true">ML</b>MLflow</li><li><b class="mono-chip rag-chip" aria-hidden="true">RAG</b>RAG</li></ul>
         </div>
         <div class="tool-row">
           <h3>Web &amp; APIs</h3>

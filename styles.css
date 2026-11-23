@@ -395,6 +395,7 @@ a.env-v:hover { color: var(--accent); }
 .chips li:hover { transform: translateY(-2px); border-color: #cdbfa8; }
 .chips img { width: 18px; height: 18px; object-fit: contain; }
 .mono-chip { width: 18px; height: 18px; display: grid; place-items: center; border-radius: 5px; background: #0194e2; color: #fff; font: 700 8.5px/1 var(--sans); }
+.rag-chip { background: #7c3aed; font-size: 7px; letter-spacing: -.02em; }
 
 /* ---------- Code card: run button and output ---------- */
 .run-btn {
