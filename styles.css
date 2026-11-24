@@ -343,7 +343,7 @@ a.env-v:hover { color: var(--accent); }
 .tilt-l3 { transform: rotate(-.6deg); }
 .tilt-r2 { transform: rotate(.5deg); }
 .print:nth-child(even) { grid-template-columns: 1fr 1.25fr; }
-.print:nth-child(even) .print-img { order: 2; }
+.print:nth-child(even) .print-img, .print:nth-child(even) .print-shots { order: 2; }
 .print:hover { transform: rotate(0) translateY(-6px); box-shadow: 0 2px 4px rgba(28, 25, 23, .08), 0 26px 50px rgba(28, 25, 23, .2); z-index: 2; }
 .tape {
   position: absolute; top: -14px; left: 50%; width: 120px; height: 28px; z-index: 2; transform: translateX(-50%) rotate(-3deg);
@@ -429,7 +429,7 @@ a.env-v:hover { color: var(--accent); }
   .code-card { justify-self: start; align-self: auto; margin-top: 0; transform: none; }
   .light-table { padding: 40px 24px; gap: 44px; }
   .print, .print:nth-child(even) { grid-template-columns: 1fr; gap: 16px; }
-  .print:nth-child(even) .print-img { order: 0; }
+  .print:nth-child(even) .print-img, .print:nth-child(even) .print-shots { order: 0; }
   .print-body, .print:nth-child(even) .print-body { padding: 4px 6px 6px; }
 }
 
